@@ -177,3 +177,7 @@ Thank you for reading the documentation. If you need an example using all these 
 
 
 If you have issues, report them to the github project link.
+
+[Github Link](https://github.com/Jeet-Chugh/pcpartscraper)
+[PyPi Link](https://pypi.org/project/pcpartscraper/)
+[Example Code Link](https://raw.githubusercontent.com/Jeet-Chugh/pcpartscraper/master/example.py)
