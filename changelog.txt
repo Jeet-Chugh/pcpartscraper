@@ -1,0 +1,36 @@
+CHANGELOG
+=========
+
+0.0.1 (7/8/20):
+-----------------
+- Release on PyPi
+- Fixed Text errors
+- Added example.py file
+
+1.0.0 (7/8/20):
+-----------------
+- Updated Release
+- Attempted to fix Import Statement
+- Created Module Folder Architecture
+- Fixed ReadME.md
+
+1.0.1 (7/8/20):
+----------------
+- Fixed REAME
+- Updated Example.py
+
+1.0.2 (7/8/20):
+----------------
+- Accidentally Corrupted Changes
+- Final ReadME
+- GitHub commits
+
+1.0.3 (7/8/20):
+----------------
+- setup.py Final Changes
+- ReadMe.md Final
+- Added PyPi tags
+
+1.0.4 (7/8/20):
+----------------
+- Stable Release
