@@ -9,7 +9,7 @@
   - View: **name, type, sale_link, price, specifications, url, rating, reviews, queries**
   - Install easily with pip
   - Lightweight, only uses Requests and BS4 BeautifulSoup
-#### Github Link | PyPi Link | Example Code Link  
+#### [Github Link](https://github.com/Jeet-Chugh/pcpartscraper) | [PyPi Link](https://pypi.org/project/pcpartscraper/) | [Example Code Link](https://raw.githubusercontent.com/Jeet-Chugh/pcpartscraper/master/example.py)
 
   Quick and Easy Installation via PIP: `pip install pcpartscraper`  
 
@@ -173,11 +173,7 @@ A return would look like this
 
 ---  
 
-Thank you for reading the documentation. If you need an example using all these methods, go to [link]  
+Thank you for reading the documentation. If you need an example using all these methods, go to [Example Code Link](https://raw.githubusercontent.com/Jeet-Chugh/pcpartscraper/master/example.py) 
 
 
 If you have issues, report them to the github project link.
-
-[Github Link](https://github.com/Jeet-Chugh/pcpartscraper)
-[PyPi Link](https://pypi.org/project/pcpartscraper/)
-[Example Code Link](https://raw.githubusercontent.com/Jeet-Chugh/pcpartscraper/master/example.py)
