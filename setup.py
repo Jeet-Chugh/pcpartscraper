@@ -10,7 +10,7 @@ classifiers = [
 
 setup(
     name='pcpartscraper',
-    version='1.0.4',
+    version='1.0.6',
     description="A powerful pcpartpicker.com WebScraper that extracts Data from Part URL's and search Queries.",
     long_description_content_type='text/markdown',
     long_description=open('README.md','r').read() + '\n\n' + open('changelog.txt','r').read(),
