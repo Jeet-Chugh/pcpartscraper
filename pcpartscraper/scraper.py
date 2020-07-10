@@ -67,21 +67,11 @@ class Part:
         except:  return None
 
     def reviews(self,results=1):
-        final_reviews = []
         reviews = self.soup.find_all('div',class_="partReviews__writeup markdown")
         if results > len(reviews):  results = len(reviews)
-        i = 0
-        for review in reviews:
-            final_reviews.append(review.find('p').text)
-            i += 1
-            if i == results:  break
-        return final_reviews
+        return [x.find('p').text for x in reviews[:results]]
 
-def Query(search_term,results=3,exclude_laptops=False):
-    """
-    Accepts a search term (str), number of results needed (int), and
-    a value for whether laptops should be excluded in the search (bool)
-    """
+def Query(search_term,results=3,exclude_laptops=False,pages=1):
     try:
         base = 'https://pcpartpicker.com/search/?q='
         url = base + str(search_term).replace(' ','+')
@@ -89,18 +79,23 @@ def Query(search_term,results=3,exclude_laptops=False):
             results = 20
         elif exclude_laptops:
             url += '+-laptop'
-
-        search = rq.get(url,headers=rq.utils.default_headers())
-        html = BeautifulSoup(search.text,'html.parser')
-        search_result = html.find('section', class_="search-results__pageContent")
-        search_result_list = search_result.find_all('ul',class_='list-unstyled')
-        part_list = []
-        i = 0
-        for part in search_result_list:
-            link = part.find('li').find('p').find('a',href=True)['href']
-            part_list.append(Part(link))
-            i += 1
-            if i >= results:  break
-            continue
-        return part_list
     except:  return None
+    try:
+        part_list = []
+        for page_n in range(1,pages+1):
+            real_url = url + '&page={}'.format(str(page_n))
+            search = rq.get(real_url,headers=rq.utils.default_headers())
+            html = BeautifulSoup(search.text,'html.parser')
+            search_result = html.find('section', class_="search-results__pageContent")
+            search_result_list = search_result.find_all('ul',class_='list-unstyled')
+            i = 0
+            for part in search_result_list:
+                link = part.find('li').find('p').find('a',href=True)['href']
+                part_list.append(Part(link))
+                i += 1
+                if i >= results:  break
+                continue
+        return part_list
+    except:
+        if len(part_list) > 0:  return part_list
+        return None
