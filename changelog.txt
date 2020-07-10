@@ -34,3 +34,14 @@ CHANGELOG
 1.0.4 (7/8/20):
 ----------------
 - Stable Release
+
+1.0.5 (7/9/20):
+---------------
+- Fixed Links in README.md
+
+1.0.6 (7/9/20):
+---------------
+- Improved Part.reviews() code execution speed/readability
+- Beta Testing for Multiple Paged Query's
+- Query Now Takes in a 'pages' Input
+
