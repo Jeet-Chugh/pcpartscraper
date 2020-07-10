@@ -9,7 +9,7 @@
   - View: **name, type, sale_link, price, specifications, url, rating, reviews, queries**
   - Install easily with pip
   - Lightweight, only uses Requests and BS4 BeautifulSoup
-#### [Github Link](https://github.com/Jeet-Chugh/pcpartscraper) | [PyPi Link](https://pypi.org/project/pcpartscraper/) | [Example Code Link](https://raw.githubusercontent.com/Jeet-Chugh/pcpartscraper/master/example.py)
+#### [Github Link](https://github.com/Jeet-Chugh/pcpartscraper) | [PyPi Link](https://pypi.org/project/pcpartscraper/) | [Example Code Link](https://raw.githubusercontent.com/Jeet-Chugh/pcpartscraper/master/example.py)  
 
   Quick and Easy Installation via PIP: `pip install pcpartscraper`  
 
@@ -117,7 +117,7 @@ returns a list containing x amount of text-reviews for a part. Reviews are from 
 
 #### 'Query' Function:  
 
-Query takes in (url as a string), (results as an int), (exclude_laptops as a bool)   
+Query takes in (url as a string), (results as an int), (exclude_laptops as a bool), (pages as an int)
 
 **Import:**  
 
@@ -125,7 +125,7 @@ Query takes in (url as a string), (results as an int), (exclude_laptops as a boo
 
 **Instantiation:**  
 
-``result_list = Query(search_term='ryzen 5',results=1,exclude_laptops=True)``  
+``result_list = Query(search_term='ryzen 5',results=1,exclude_laptops=True,pages=1)``  
 
 #### **'Query' Inputs:**  
 
@@ -161,19 +161,31 @@ The default value for exclude_laptops is True
 
  (True, False)  
 
----  
+---
 
-`Query('ryzen 5',3,True)`  
+``Query(pages=1)``  
 
-This example would return a list containing 3 'Part' objects for the top 3 searches pertaining to 'ryzen',excluding laptops.  
+Searching for popular parts ends up with many pages to navigate through  
+
+pages is the number of pages that you want to span across. If 5, it will navigate the (results) # of top results for (pages)
+
+The default value for pages is 1, as it greatly increases script execution timing.
+
+ (True, False)  
+
+---    
+
+`Query('ryzen 5',3,True,1)`  
+
+This example would return a list containing 3 'Part' objects for the top 3 searches on the first page pertaining to 'ryzen',excluding laptops.  
 
 A return would look like this  
 
-`print(Query('ryzen',3,True))` --> [Part Object at x,Part Object at y,Part Object at z]  
+`print(Query('ryzen',3,True,1))` --> [Part Object at x,Part Object at y,Part Object at z]  
 
 ---  
 
-Thank you for reading the documentation. If you need an example using all these methods, go to [Example Code Link](https://raw.githubusercontent.com/Jeet-Chugh/pcpartscraper/master/example.py) 
+Thank you for reading the documentation. If you need an example using all these methods, go to [link]  
 
 
 If you have issues, report them to the github project link.
