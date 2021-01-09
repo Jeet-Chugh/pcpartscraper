@@ -76,4 +76,4 @@ async def on_message(message):
     elif message.content.startswith('pc.code'):
         await message.channel.send(embed=discord.Embed(title='GitHub Repository',url='https://github.com/Jeet-Chugh/pcpartscraper',description='View the pcpartscraper Python Module.'))
 
-client.run('NzMwOTkzNTcxNjIwMDYxMjE0.XwflSg.k-3rwlQ2zFvK8fd5syFHi0C_9Zg')
+client.run('token')
